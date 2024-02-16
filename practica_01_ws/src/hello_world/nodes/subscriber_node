@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+
+import rospy
+from hello_world import subscriber
+
+def InitNode():
+    try:
+        rospy.init_node('sub')
+        subscriber.Subscriber()
+    except rospy.ROSInterruptException:
+        rospy.logerr('Error')
+
+if __name__ == "__main__":
+    InitNode()
