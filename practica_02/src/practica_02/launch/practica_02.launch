@@ -1,0 +1,4 @@
+<launch>
+    <node name="publisher_node" pkg="practica_02" type="pub_node" output="screen"/>
+    <node name="subscriber_node" pkg="practica_02" type="sub_node" output="screen"/>
+</launch>
