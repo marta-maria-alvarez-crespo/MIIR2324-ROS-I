@@ -1,0 +1,15 @@
+/home/marto/practica_04_ws/install/_setup_util.py
+/home/marto/practica_04_ws/install/env.sh
+/home/marto/practica_04_ws/install/setup.bash
+/home/marto/practica_04_ws/install/local_setup.bash
+/home/marto/practica_04_ws/install/setup.sh
+/home/marto/practica_04_ws/install/local_setup.sh
+/home/marto/practica_04_ws/install/setup.zsh
+/home/marto/practica_04_ws/install/local_setup.zsh
+/home/marto/practica_04_ws/install/.rosinstall
+/home/marto/practica_04_ws/install/lib/pkgconfig/practica_04.pc
+/home/marto/practica_04_ws/install/share/practica_04/cmake/practica_04Config.cmake
+/home/marto/practica_04_ws/install/share/practica_04/cmake/practica_04Config-version.cmake
+/home/marto/practica_04_ws/install/share/practica_04/package.xml
+/home/marto/practica_04_ws/install/lib/practica_04/move_turtle_node
+/home/marto/practica_04_ws/install/share/practica_04/launch.launch

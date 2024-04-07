@@ -1,0 +1,4 @@
+<launch>
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" />
+    <node name="move_turtle_node" pkg="practica_04" type="move_turtle_node" output="screen" /> 
+</launch>

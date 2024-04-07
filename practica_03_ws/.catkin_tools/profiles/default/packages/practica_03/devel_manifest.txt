@@ -1,0 +1,25 @@
+practica_03
+/home/marto/practica_03_ws/devel/.private/practica_03/cmake.lock /home/marto/practica_03_ws/devel/./cmake.lock
+/home/marto/practica_03_ws/devel/.private/practica_03/include/practica_03/GetSensorValueResponse.h /home/marto/practica_03_ws/devel/include/practica_03/GetSensorValueResponse.h
+/home/marto/practica_03_ws/devel/.private/practica_03/include/practica_03/GetSensorValueRequest.h /home/marto/practica_03_ws/devel/include/practica_03/GetSensorValueRequest.h
+/home/marto/practica_03_ws/devel/.private/practica_03/include/practica_03/GetSensorValue.h /home/marto/practica_03_ws/devel/include/practica_03/GetSensorValue.h
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/python3/dist-packages/practica_03/__init__.py /home/marto/practica_03_ws/devel/lib/python3/dist-packages/practica_03/__init__.py
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/python3/dist-packages/practica_03/srv/_GetSensorValue.py /home/marto/practica_03_ws/devel/lib/python3/dist-packages/practica_03/srv/_GetSensorValue.py
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/python3/dist-packages/practica_03/srv/__init__.py /home/marto/practica_03_ws/devel/lib/python3/dist-packages/practica_03/srv/__init__.py
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/pkgconfig/practica_03.pc /home/marto/practica_03_ws/devel/lib/pkgconfig/practica_03.pc
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/practica_03/cmake.lock /home/marto/practica_03_ws/devel/lib/practica_03/cmake.lock
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/practica_03/client /home/marto/practica_03_ws/devel/lib/practica_03/client
+/home/marto/practica_03_ws/devel/.private/practica_03/lib/practica_03/service /home/marto/practica_03_ws/devel/lib/practica_03/service
+/home/marto/practica_03_ws/devel/.private/practica_03/share/common-lisp/ros/practica_03/srv/_package.lisp /home/marto/practica_03_ws/devel/share/common-lisp/ros/practica_03/srv/_package.lisp
+/home/marto/practica_03_ws/devel/.private/practica_03/share/common-lisp/ros/practica_03/srv/GetSensorValue.lisp /home/marto/practica_03_ws/devel/share/common-lisp/ros/practica_03/srv/GetSensorValue.lisp
+/home/marto/practica_03_ws/devel/.private/practica_03/share/common-lisp/ros/practica_03/srv/_package_GetSensorValue.lisp /home/marto/practica_03_ws/devel/share/common-lisp/ros/practica_03/srv/_package_GetSensorValue.lisp
+/home/marto/practica_03_ws/devel/.private/practica_03/share/common-lisp/ros/practica_03/srv/practica_03-srv.asd /home/marto/practica_03_ws/devel/share/common-lisp/ros/practica_03/srv/practica_03-srv.asd
+/home/marto/practica_03_ws/devel/.private/practica_03/share/roseus/ros/practica_03/manifest.l /home/marto/practica_03_ws/devel/share/roseus/ros/practica_03/manifest.l
+/home/marto/practica_03_ws/devel/.private/practica_03/share/roseus/ros/practica_03/srv/GetSensorValue.l /home/marto/practica_03_ws/devel/share/roseus/ros/practica_03/srv/GetSensorValue.l
+/home/marto/practica_03_ws/devel/.private/practica_03/share/gennodejs/ros/practica_03/_index.js /home/marto/practica_03_ws/devel/share/gennodejs/ros/practica_03/_index.js
+/home/marto/practica_03_ws/devel/.private/practica_03/share/gennodejs/ros/practica_03/srv/GetSensorValue.js /home/marto/practica_03_ws/devel/share/gennodejs/ros/practica_03/srv/GetSensorValue.js
+/home/marto/practica_03_ws/devel/.private/practica_03/share/gennodejs/ros/practica_03/srv/_index.js /home/marto/practica_03_ws/devel/share/gennodejs/ros/practica_03/srv/_index.js
+/home/marto/practica_03_ws/devel/.private/practica_03/share/practica_03/cmake/practica_03-msg-paths.cmake /home/marto/practica_03_ws/devel/share/practica_03/cmake/practica_03-msg-paths.cmake
+/home/marto/practica_03_ws/devel/.private/practica_03/share/practica_03/cmake/practica_03Config.cmake /home/marto/practica_03_ws/devel/share/practica_03/cmake/practica_03Config.cmake
+/home/marto/practica_03_ws/devel/.private/practica_03/share/practica_03/cmake/practica_03-msg-extras.cmake /home/marto/practica_03_ws/devel/share/practica_03/cmake/practica_03-msg-extras.cmake
+/home/marto/practica_03_ws/devel/.private/practica_03/share/practica_03/cmake/practica_03Config-version.cmake /home/marto/practica_03_ws/devel/share/practica_03/cmake/practica_03Config-version.cmake

@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import rospy
+from myturtle3 import move_stop
+
+
+def inicia_nodo():
+    """
+    Initializes the ROS node and starts the FindWall process.
+
+    This function initializes the ROS node with the name "move_node" and starts the FindWall process.
+    If a ROSInterruptException occurs, an error message is logged.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    try:
+        rospy.init_node("move_node")
+        reach_wall = move_stop.FindWall()
+        reach_wall.start()
+
+    except rospy.ROSInterruptException:
+        rospy.logerr("Error inicializando el nodo")
+
+
+if __name__ == "__main__":
+    inicia_nodo()

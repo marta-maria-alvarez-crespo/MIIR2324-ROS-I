@@ -1,0 +1,15 @@
+#! /usr/bin/env python
+
+import rospy
+from practica_04 import move_turtle
+
+
+def InitNode():
+    try:
+        rospy.init_node('move_turtle_node')
+        move_turtle.TurtleMove().run()
+    except rospy.ROSInterruptException:
+        rospy.logerr('Error')
+
+if __name__ == "__main__":
+    InitNode()

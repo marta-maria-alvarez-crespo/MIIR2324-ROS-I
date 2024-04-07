@@ -1,0 +1,8 @@
+practica_04
+/home/marto/practica_04_ws/devel/.private/practica_04/cmake.lock /home/marto/practica_04_ws/devel/./cmake.lock
+/home/marto/practica_04_ws/devel/.private/practica_04/lib/python3/dist-packages/practica_04/__init__.py /home/marto/practica_04_ws/devel/lib/python3/dist-packages/practica_04/__init__.py
+/home/marto/practica_04_ws/devel/.private/practica_04/lib/pkgconfig/practica_04.pc /home/marto/practica_04_ws/devel/lib/pkgconfig/practica_04.pc
+/home/marto/practica_04_ws/devel/.private/practica_04/lib/practica_04/move_turtle_node /home/marto/practica_04_ws/devel/lib/practica_04/move_turtle_node
+/home/marto/practica_04_ws/devel/.private/practica_04/lib/practica_04/cmake.lock /home/marto/practica_04_ws/devel/lib/practica_04/cmake.lock
+/home/marto/practica_04_ws/devel/.private/practica_04/share/practica_04/cmake/practica_04Config.cmake /home/marto/practica_04_ws/devel/share/practica_04/cmake/practica_04Config.cmake
+/home/marto/practica_04_ws/devel/.private/practica_04/share/practica_04/cmake/practica_04Config-version.cmake /home/marto/practica_04_ws/devel/share/practica_04/cmake/practica_04Config-version.cmake

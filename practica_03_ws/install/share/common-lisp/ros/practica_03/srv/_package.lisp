@@ -1,0 +1,10 @@
+(cl:defpackage practica_03-srv
+  (:use )
+  (:export
+   "GETSENSORVALUE"
+   "<GETSENSORVALUE-REQUEST>"
+   "GETSENSORVALUE-REQUEST"
+   "<GETSENSORVALUE-RESPONSE>"
+   "GETSENSORVALUE-RESPONSE"
+  ))
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import rospy 
+from practica_03 import client
+
+def inicia_nodo():
+    try:
+        rospy.init_node("client") 
+        client.cliente() 
+    except rospy.ROSInterruptException:
+        rospy.logerr("O presionaste CTRL+C o algo salió mal...")
+
+if __name__ == "__main__":
+    inicia_nodo()

@@ -1,0 +1,4 @@
+<launch>
+    <node name="client" pkg="practica_03" type="client" output="screen" />
+    <node name="service" pkg="practica_03" type="service" output="screen" />
+</launch>
