@@ -1,3 +1,7 @@
+# Autora: Marta María Álvarez Crespo
+# Descripción: Clase TurnTurtle que representa el comportamiento de un robot tortuga para rotar ante un obstáculo.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 import time
 from sensor_msgs.msg import LaserScan
@@ -6,16 +10,23 @@ from myturtle3.base import Base
 
 
 class TurnTurtle(Base):
+    """
+    Una clase que representa el comportamiento de un robot tortuga para rotar ante un obstáculo.
+    Esta clase hereda de la clase Base e implementa el comportamiento de rotación de la tortuga.
+    """
 
     def __init__(self):
+        """
+        Inicializa la clase TurnTurtle.
+        """
         super().__init__()
 
     def scan_callback(self, scan_message):
         """
-        Callback function for processing lidar scan messages.
+        Callback para procesar los mensajes de escaneo del lidar.
 
         Args:
-            scan_message (sensor_msgs.msg.LaserScan): The lidar scan message.
+            scan_message (sensor_msgs.msg.LaserScan): El mensaje de escaneo conteniendo la información de distancia del LIDAR.
 
         Returns:
             None
@@ -28,10 +39,10 @@ class TurnTurtle(Base):
 
     def rotate(self, angular_speed):
         """
-        Rotates the turtlebot at the specified angular speed.
+        Rota el turtlebot a la velocidad angular especificada.
 
         Args:
-            angular_speed (float): The angular speed of rotation in radians per second.
+            angular_speed (float): La velocidad angular a la que se desea rotar el turtlebot.
 
         Returns:
             None
@@ -42,12 +53,14 @@ class TurnTurtle(Base):
         rospy.wait_for_message("scan", LaserScan)
         time.sleep(1)
 
+        # Inicia la rotación de la tortuga a una velocidad de 1, siempre que la distancia del lidar lateral al obstáculo sea mayor a la distancia
+        # de parada o la tortuga detecte un obstáculo en frente.
         while (self.lidar_distances[1] > self.stop_distance) or (self.lidar_distances[0] < self.stop_distance * 2.26):
             self._cmd_pub.publish(twist)
 
     def start(self):
         """
-        Starts the turtle rotation and stops it after rotating by 1 unit.
+        Inicia la rotación de la tortuga y envía el flag correspondiente cuando termina.
         """
         self.rotate(1)
         self.stop_turtle("follow_wall")

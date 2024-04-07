@@ -1,1 +1,1 @@
-__all__ = ["move_stop.py", "turn.py", "follow_wall.py"]
+__all__ = ["move_stop.py", "turn.py", "follow_wall.py", "base.py"]

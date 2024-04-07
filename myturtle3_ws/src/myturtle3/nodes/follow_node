@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# Autora: Marta María Álvarez Crespo
+# Descripción: Nodo de ROS que inicia el proceso FollowWall.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 from myturtle3.msg import StateMessage
 from myturtle3 import follow_wall
@@ -9,13 +13,13 @@ VARIABLE = False
 
 def subscriber_callback(data):
     """
-    Callback function for the subscriber.
+    Callback para el subscriptor.
 
-    This function is called whenever a new sensor message is received.
-    It logs the received message and updates the global VARIABLE based on the message.
+    Esta función se llama cada vez que se recibe un nuevo mensaje del sensor.
+    Guarda el mensaje recibido y actualiza la VARIABLE global en función del mensaje.
 
     Args:
-        data: The sensor message received.
+        data: El mensaje del sensor recibido.
 
     Returns:
         None
@@ -28,13 +32,14 @@ def subscriber_callback(data):
 
 def inicia_nodo():
     """
-    Initializes the follow_node and starts the follow wall behavior.
+    Inicializa el nodo de ROS y comienza el comportamiento de seguir la pared.
 
-    This function initializes the ROS node, subscribes to the "state" topic,
-    and starts the follow wall behavior when the global VARIABLE is True.
+    Esta función inicializa el nodo de ROS, se suscribe al topic "state",
+    e inicia el objeto follow_wall.FollowWall(). Entra en un bucle donde espera a que la VARIABLE global sea True.
+    Una vez que VARIABLE es True, establece VARIABLE en False e inicia el comportamiento de seguir la pared.
 
     Raises:
-        rospy.ROSInterruptException: If there is an error initializing the node.
+        rospy.ROSInterruptException: Si hay un error inicializando el nodo.
 
     """
     try:

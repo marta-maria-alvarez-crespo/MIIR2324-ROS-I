@@ -1,3 +1,7 @@
+# Autora: Marta María Álvarez Crespo
+# Descripción: Clase Base que representa la funcionalidad base del robot tortuga.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 import math
 from sensor_msgs.msg import LaserScan
@@ -7,31 +11,43 @@ from myturtle3.msg import StateMessage
 
 class Base:
     """
-    The Base class represents the base functionality of the turtle robot.
-    It provides methods for controlling the turtle's movement and handling sensor data.
+    La clase Base representa la funcionalidad base del robot tortuga.
+    Agrega métodos para controlar el movimiento de la tortuga y manejar los datos del sensor.
     """
 
     NO_OBSTACLE = 2.5
 
     def __init__(self):
+        """
+        Inicializa la clase Base.
+
+        Esta función se encarga de inicializar los atributos y publicadores/subscriptores necesarios para
+        el funcionamiento de la clase Base.
+
+        Args:
+            None
+
+        Returns:
+            None
+        """
         self._cmd_pub = rospy.Publisher("cmd_vel", Twist, queue_size=1)
         self._state_pub = rospy.Publisher("state", StateMessage, queue_size=1)
         self._laser_subscriber = rospy.Subscriber("scan", LaserScan, self.scan_callback)
         self.lidar_distances = []
         self.speed = 0.2
         self.stop_distance = 0.48
-        
+
     @staticmethod
     def set_inf_nan_value(value):
         """
-        Converts infinite or NaN values to predefined constants.
+        Convierte valores infinitos o NaN en constantes predefinidas.
 
         Args:
-            value: The value to be converted.
+            value: El valor a ser convertido.
 
         Returns:
-            The converted value. If the value is infinite, returns Base.NO_OBSTACLE.
-            If the value is NaN, returns 0. Otherwise, returns the original value.
+            El valor convertido. Si el valor es infinito, devuelve Base.NO_OBSTACLE.
+            Si el valor es NaN, devuelve 0. De lo contrario, devuelve el valor original.
         """
         if value == float("Inf"):
             return Base.NO_OBSTACLE
@@ -39,14 +55,13 @@ class Base:
             return 0
         else:
             return value
-        
+
     def stop_turtle(self, topic):
         """
-        Stops the turtle's movement and publishes a state message.
+        Detiene el movimiento de la tortuga y publica un mensaje de estado.
 
         Args:
-            topic: The topic identifier for the state message.
-
+            topic: El identificador del mensaje del topic State.
         """
         twist = Twist()
         twist.linear.x = 0.0
@@ -59,16 +74,14 @@ class Base:
         self._state_pub.publish(message)
 
         rospy.loginfo("Stop!")
-        
+
     def scan_callback(self, scan_message):
         """
-        Callback function for handling scan messages.
+        Callback para procesar los mensajes de escaneo del lidar.
 
         Args:
-            scan_message: The scan message received.
+            scan_message: El mensaje de escaneo conteniendo la información de distancia del LIDAR.
 
         Returns:
             None
         """
-        pass
-    

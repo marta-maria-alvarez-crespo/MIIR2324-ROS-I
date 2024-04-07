@@ -1,3 +1,7 @@
+# Autora: Marta María Álvarez Crespo
+# Descripción: Clase FindWall que representa un comportamiento de la tortuga para encontrar una pared.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 import time
 from sensor_msgs.msg import LaserScan
@@ -7,36 +11,34 @@ from myturtle3.base import Base
 
 class FindWall(Base):
     """
-    This class represents a turtle behavior for finding a wall.
-
-    It inherits from the Base class and implements methods for processing lidar scan data and 
-    moving the turtle until it reaches a certain distance from a wall.
+    Esta clase representa un comportamiento de la tortuga para encontrar una pared.
+    Hereda de la clase Base e implementa métodos para procesar datos de escaneo de lidar y
+    mover la tortuga hasta que alcance una cierta distancia de una pared.
 
     Attributes:
-        lidar_distances (list): A list to store the lidar distances.
-        stop_distance (float): The distance from the wall at which the turtle should stop.
-        speed (float): The linear velocity of the turtle.
+        lidar_distances (list): Una lista que almacena los valores de distancia del lidar.
+        stop_distance (float): La distancia a la que la tortuga debe detenerse.
+        speed (float): La velocidad de la tortuga.
 
     Methods:
-        __init__(): Initializes the FindWall class.
-        scan_callback(scan_message): Callback function for processing lidar scan data.
-        move(): Moves the turtle forward until it reaches a certain distance from a wall.
-        start(): Starts the movement of the turtle.
+        __init__(): Inicializa la clase FindWall.
+        scan_callback(scan_message): Callback para procesar los datos de escaneo del lidar.
+        move(): Mueve la tortuga hacia adelante hasta que alcance una pared a una cierta distancia.
+        start(): Inicia el movimiento de la tortuga.
     """
-    
+
     def __init__(self):
         """
-        Initializes the FindWall class.
+        Inicializa la clase FindWall.
         """
         super().__init__()
 
-
     def scan_callback(self, scan_message):
         """
-        Callback function for processing lidar scan data.
+        Callback para procesar los datos de escaneo del lidar.
 
         Args:
-            scan_message (LaserScan): The lidar scan message containing range data.
+            scan_message (LaserScan): El mensaje de escaneo que contiene la información de distancia del lidar.
 
         Returns:
             None
@@ -46,14 +48,13 @@ class FindWall(Base):
         self.lidar_distances = list(map(FindWall.set_inf_nan_value, self.lidar_distances))
         print(self.lidar_distances)
 
-
     def move(self):
         """
-        Moves the turtle forward until it reaches a certain distance from a wall.
+        Mueve la tortuga hacia adelante hasta que alcance una pared a una cierta distancia.
 
-        This method sets the linear velocity of the turtle to a predefined speed and continuously 
-        publishes the velocity command until the turtle is within the stop distance from an obstacle 
-        detected by the lidar.
+        Este método establece la velocidad lineal de la tortuga a una velocidad predefinida y publica continuamente
+        el comando de velocidad hasta que la tortuga esté dentro de la distancia de parada de un obstáculo
+        detectado por el lidar.
 
         Args:
             None
@@ -73,9 +74,8 @@ class FindWall(Base):
 
         self.stop_turtle(topic="find_wall")
 
-
     def start(self):
         """
-        Starts the movement of the turtle.
+        Inicia el movimiento de la tortuga.
         """
         self.move()

@@ -1,3 +1,7 @@
+# Autora: Marta María Álvarez Crespo
+# Descripción: Clase FollowWall que representa el comportamiento de un robot tortuga para seguir una pared usando un controlador PID.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 import time
 from sensor_msgs.msg import LaserScan
@@ -7,41 +11,38 @@ from myturtle3.base import Base
 
 class FollowWall(Base):
     """
-    A class representing a turtle robot that follows a wall.
+    Una clase que representa el comportamiento de un robot tortuga para seguir una pared.
+    Esta clase hereda de la clase Base e implementa el comportamiento de seguimiento de pared usando un controlador PID.
 
-    This class inherits from the Base class and implements the wall following behavior using a PID controller.
-
-    Attributes:
-        stop_distance_follow (float): The distance from the wall at which the turtle should stop.
-        k (float): The proportional gain of the PID controller.
-        ts (float): The sampling time of the PID controller.
-        ti (float): The integral time constant of the PID controller.
-        td (float): The derivative time constant of the PID controller.
-        n (int): The filter coefficient of the derivative term.
-        c1 (float): The coefficient for the integral term calculation.
-        c2 (float): The coefficient for the derivative term calculation.
-        c3 (float): The coefficient for the derivative term calculation.
-        error (list): A list containing the current and previous error values.
-        integral (list): A list containing the current and previous integral values.
-        derivative (list): A list containing the current and previous derivative values.
-        cur (int): The index of the current error, integral, and derivative values.
-        pre (int): The index of the previous error, integral, and derivative values.
-        lidar_distances (list): A list containing the lidar distances.
+    Atributes:
+        stop_distance_follow (float): La distancia desde la pared a la que la tortuga debe detenerse.
+        k (float): La ganancia proporcional del controlador PID.
+        ts (float): El tiempo de muestreo del controlador PID.
+        ti (float): El tiempo constante integral del controlador PID.
+        td (float): El tiempo constante derivativo del controlador PID.
+        n (int): El coeficiente de filtro de paso bajo del término derivativo.
+        c1 (float): El coeficiente para el cálculo del término integral.
+        c2 (float): El coeficiente para el cálculo del término derivativo.
+        c3 (float): El coeficiente para el cálculo del término derivativo.
+        error (list): Una lista que contiene los valores de error actuales y anteriores.
+        integral (list): Una lista que contiene los valores integrales actuales y anteriores.
+        derivative (list): Una lista que contiene los valores derivativos actuales y anteriores.
+        cur (int): El índice de los valores actuales de error, integral y derivativo.
+        pre (int): El índice de los valores anteriores de error, integral y derivativo.
 
     Methods:
-        __init__(): Initializes the FollowWall class.
-        reset_pid(): Resets the PID controller.
-        scan_callback(scan_message): Callback function for the scan message.
-        pid(sp, speed): Calculates the control signal using a PID controller.
-        move(): Moves the turtle robot forward while following a wall.
-        start(): Starts the turtle movement and stops it after finding a wall.
+        __init__(): Inicializa la clase FollowWall.
+        reset_pid(): Restablece el controlador PID para que el error parta de 0 en cada iteración.
+        scan_callback(scan_message): Función de devolución de llamada para el mensaje de escaneo.
+        pid(sp, speed): Calcula la señal de control usando un controlador PID.
+        move(): Mueve el robot tortuga hacia adelante mientras sigue una pared.
+        start(): Inicia el movimiento de la tortuga y lo detiene después de encontrar una pared.
     """
 
     def __init__(self):
         """
-        Initializes the FollowWall class.
-
-        This method sets up the initial values and parameters for the FollowWall class, including the PID parameters.
+        Inicializa la clase FollowWall.
+        Este método establece los valores y parámetros iniciales para la clase FollowWall, incluyendo los parámetros del PID.
 
         Parameters:
         None
@@ -53,7 +54,7 @@ class FollowWall(Base):
         self.stop_distance_follow = 0.38
 
         self.k = 1
-        # sKelf.k = 0.6
+        # self.k = 0.6
         self.ts = 0.8
         self.ti = 1250000
         # self.ti = 500000
@@ -62,7 +63,7 @@ class FollowWall(Base):
 
         self.c1 = self.ts / (2 * self.ti)
         self.c2 = (2 * self.td) / (2 * self.td / (self.n + self.ts))
-        # self.c3 = (2 * self.Td / (self.N - self.Ts)) / (2 * self.Td / (self.N + self.Ts))
+        self.c3 = (2 * self.td / (self.n - self.ts)) / (2 * self.td / (self.n + self.ts))
         # self.c2 = 0
         self.c3 = 0
 
@@ -72,22 +73,20 @@ class FollowWall(Base):
 
         self.cur, self.pre = 0, 1
 
-
     def reset_pid(self):
         """
-        Resets the PID controller by setting the error, integral, and derivative terms to zero.
+        Resetea el controlador PID estableciendo los términos de error, integral y derivativo a cero.
         """
         self.error = [0, 0]
         self.integral = [0, 0]
         self.derivative = [0, 0]
 
-
     def scan_callback(self, scan_message):
         """
-        Callback function for the scan message.
+        Callback para el mensaje de escaneo.
 
         Args:
-            scan_message (sensor_msgs.msg.LaserScan): The scan message containing the lidar distances.
+            scan_message (sensor_msgs.msg.LaserScan): El mensaje de escaneo conteniendo la información de distancia del LIDAR.
 
         Returns:
             None
@@ -98,17 +97,16 @@ class FollowWall(Base):
         self.lidar_distances = list(map(FollowWall.set_inf_nan_value, self.lidar_distances))
         print(self.lidar_distances)
 
-
     def pid(self, sp, speed):
         """
-        Calculates the control signal using a PID controller.
+        Calcula la señal de control usando un controlador PID.
 
         Args:
-            sp (float): Setpoint value.
-            speed (float): Maximum speed value.
+            sp (float): Valor del setpoint o consigna del controlador PID.
+            speed (float): Valor de velocidad máxima de la tortuga.
 
         Returns:
-            float: Control signal calculated by the PID controller.
+            float: Señal de control calculada por el controlador PID.
         """
         current_distance = self.lidar_distances[1]
         self.error[self.cur] = sp - current_distance
@@ -130,15 +128,14 @@ class FollowWall(Base):
         else:
             return cv
 
-
     def move(self):
         """
-        Moves the turtle robot forward while following a wall.
+        Mueve la tortuga hacia adelante mientras sigue una pared.
 
-        This method resets the PID controller, sets the linear velocity of the turtle,
-        waits for a laser scan message, and then starts the wall following behavior.
-        The turtle will continue moving forward until it reaches the stop distance
-        from the wall.
+        Este método restablece el controlador PID, establece la velocidad lineal de la tortuga,
+        espera un mensaje de escaneo láser y luego inicia el comportamiento de seguimiento de pared.
+        La tortuga continuará moviéndose hacia adelante hasta que alcance la distancia de parada
+        desde la pared.
 
         Args:
             None
@@ -161,10 +158,9 @@ class FollowWall(Base):
         twist.angular.z = 0.0
         self._cmd_pub.publish(twist)
 
-
     def start(self):
         """
-        Starts the turtle movement and stops it after finding a wall, sending a message to the state topic.
+        Comienza el movimiento de la tortuga y la detiene después de encontrar una pared, enviando un mensaje al topic de state.
         """
         self.move()
-        self.stop_turtle("find_wall")
+        self.stop_turtle("turn_wall")

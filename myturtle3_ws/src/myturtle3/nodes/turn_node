@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# Autora: Marta María Álvarez Crespo
+# Descripción: Nodo de ROS que inicia el proceso TurnTurtle.
+# Última modificación: 07 / 04 / 2024
+
 import rospy
 from myturtle3.msg import StateMessage
 from myturtle3 import turn
@@ -18,21 +22,21 @@ def subscriber_callback(data):
         None
     """
     rospy.loginfo(f"New sensor message received: {data.id}, {data.state}.")
-    if data.id == "find_wall":
+    if data.id == "turn_wall":
         global VARIABLE
         VARIABLE = data.state
 
 
 def inicia_nodo():
     """
-    Initializes the 'turn_node' ROS node and starts the turn.TurnTurtle object.
+    Inicializa el 'turn_node' (nodo de ROS) e inicia el objeto turn.TurnTurtle().
 
-    This function initializes the ROS node with the name 'turn_node' and subscribes to the 'state' topic
-    using the StateMessage message type. It then enters a loop where it waits for the global VARIABLE
-    to become True. Once VARIABLE is True, it sets VARIABLE to False and starts the turn.TurnTurtle object.
+    Esta función inicializa el nodo de ROS con el nombre 'turn_node' y se suscribe al topic 'state'
+    usando el tipo de mensaje StateMessage. Luego entra en un bucle donde espera a que la VARIABLE global
+    se convierta en True. Una vez que VARIABLE es True, establece VARIABLE en False e inicia el comportamiento de giro.
 
     Raises:
-        rospy.ROSInterruptException: If there is an error initializing the ROS node.
+        rospy.ROSInterruptException: Si hay un error inicializando el nodo.
 
     """
     try:
@@ -44,7 +48,7 @@ def inicia_nodo():
         while True:
             while not VARIABLE:
                 None
-            
+
             VARIABLE = False
             reach_wall.start()
 
