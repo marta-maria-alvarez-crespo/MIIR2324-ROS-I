@@ -3,7 +3,9 @@
 import rospy
 from hello_world import publisher
 
-def InitNode():
+def init_node():
+    """_summary_
+    """
     try:
         rospy.init_node('pub')
         publisher.publisher()
@@ -11,4 +13,4 @@ def InitNode():
         rospy.logerr('Error')
 
 if __name__ == "__main__":
-    InitNode()
+    init_node()

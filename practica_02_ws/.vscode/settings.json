@@ -1,0 +1,18 @@
+{
+    "ros.distro": "noetic",
+    "python.autoComplete.extraPaths": [
+        "/home/marto/practica_02_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "./install/lib/python3/dist-packages",
+        "./devel/lib/python3/dist-packages",
+        "./src/practica_02/src",
+    ],
+    "python.analysis.extraPaths": [
+        "/home/marto/practica_02_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "./install/lib/python3/dist-packages",
+        "./devel/lib/python3/dist-packages",
+        "./src/practica_02/src",
+    ],
+    "cmake.configureOnOpen": false
+}

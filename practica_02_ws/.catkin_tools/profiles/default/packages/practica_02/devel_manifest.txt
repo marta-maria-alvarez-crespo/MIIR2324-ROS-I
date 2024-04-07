@@ -1,0 +1,25 @@
+practica_02
+/home/marto/practica_02_ws/devel/.private/practica_02/cmake.lock /home/marto/practica_02_ws/devel/./cmake.lock
+/home/marto/practica_02_ws/devel/.private/practica_02/include/practica_02/SensorMessage.h /home/marto/practica_02_ws/devel/include/practica_02/SensorMessage.h
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/python3/dist-packages/practica_02/__init__.py /home/marto/practica_02_ws/devel/lib/python3/dist-packages/practica_02/__init__.py
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/python3/dist-packages/practica_02/msg/_SensorMessage.py /home/marto/practica_02_ws/devel/lib/python3/dist-packages/practica_02/msg/_SensorMessage.py
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/python3/dist-packages/practica_02/msg/__init__.py /home/marto/practica_02_ws/devel/lib/python3/dist-packages/practica_02/msg/__init__.py
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/python3/dist-packages/hello_world/__init__.py /home/marto/practica_02_ws/devel/lib/python3/dist-packages/hello_world/__init__.py
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/python3/dist-packages/practca_02/__init__.py /home/marto/practica_02_ws/devel/lib/python3/dist-packages/practca_02/__init__.py
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/practica_02/pub_node /home/marto/practica_02_ws/devel/lib/practica_02/pub_node
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/practica_02/sub_node /home/marto/practica_02_ws/devel/lib/practica_02/sub_node
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/practica_02/cmake.lock /home/marto/practica_02_ws/devel/lib/practica_02/cmake.lock
+/home/marto/practica_02_ws/devel/.private/practica_02/lib/pkgconfig/practica_02.pc /home/marto/practica_02_ws/devel/lib/pkgconfig/practica_02.pc
+/home/marto/practica_02_ws/devel/.private/practica_02/share/common-lisp/ros/practica_02/msg/_package.lisp /home/marto/practica_02_ws/devel/share/common-lisp/ros/practica_02/msg/_package.lisp
+/home/marto/practica_02_ws/devel/.private/practica_02/share/common-lisp/ros/practica_02/msg/_package_SensorMessage.lisp /home/marto/practica_02_ws/devel/share/common-lisp/ros/practica_02/msg/_package_SensorMessage.lisp
+/home/marto/practica_02_ws/devel/.private/practica_02/share/common-lisp/ros/practica_02/msg/practica_02-msg.asd /home/marto/practica_02_ws/devel/share/common-lisp/ros/practica_02/msg/practica_02-msg.asd
+/home/marto/practica_02_ws/devel/.private/practica_02/share/common-lisp/ros/practica_02/msg/SensorMessage.lisp /home/marto/practica_02_ws/devel/share/common-lisp/ros/practica_02/msg/SensorMessage.lisp
+/home/marto/practica_02_ws/devel/.private/practica_02/share/roseus/ros/practica_02/manifest.l /home/marto/practica_02_ws/devel/share/roseus/ros/practica_02/manifest.l
+/home/marto/practica_02_ws/devel/.private/practica_02/share/roseus/ros/practica_02/msg/SensorMessage.l /home/marto/practica_02_ws/devel/share/roseus/ros/practica_02/msg/SensorMessage.l
+/home/marto/practica_02_ws/devel/.private/practica_02/share/practica_02/cmake/practica_02Config-version.cmake /home/marto/practica_02_ws/devel/share/practica_02/cmake/practica_02Config-version.cmake
+/home/marto/practica_02_ws/devel/.private/practica_02/share/practica_02/cmake/practica_02-msg-extras.cmake /home/marto/practica_02_ws/devel/share/practica_02/cmake/practica_02-msg-extras.cmake
+/home/marto/practica_02_ws/devel/.private/practica_02/share/practica_02/cmake/practica_02-msg-paths.cmake /home/marto/practica_02_ws/devel/share/practica_02/cmake/practica_02-msg-paths.cmake
+/home/marto/practica_02_ws/devel/.private/practica_02/share/practica_02/cmake/practica_02Config.cmake /home/marto/practica_02_ws/devel/share/practica_02/cmake/practica_02Config.cmake
+/home/marto/practica_02_ws/devel/.private/practica_02/share/gennodejs/ros/practica_02/_index.js /home/marto/practica_02_ws/devel/share/gennodejs/ros/practica_02/_index.js
+/home/marto/practica_02_ws/devel/.private/practica_02/share/gennodejs/ros/practica_02/msg/_index.js /home/marto/practica_02_ws/devel/share/gennodejs/ros/practica_02/msg/_index.js
+/home/marto/practica_02_ws/devel/.private/practica_02/share/gennodejs/ros/practica_02/msg/SensorMessage.js /home/marto/practica_02_ws/devel/share/gennodejs/ros/practica_02/msg/SensorMessage.js
